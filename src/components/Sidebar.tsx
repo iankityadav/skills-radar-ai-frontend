@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { 
-  FiHome, 
-  FiUpload, 
-  FiEdit, 
-  FiBarChart3,
+import {
+  FiHome,
+  FiUpload,
+  FiEdit,
+  FiBarChart,
 } from 'react-icons/fi'
 import clsx from 'clsx'
 
@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: FiHome },
   { name: 'Upload CV', href: '/upload', icon: FiUpload },
   { name: 'Review Profile', href: '/review', icon: FiEdit },
-  { name: 'Radar Chart', href: '/radar', icon: FiBarChart3 },
+  { name: 'Radar Chart', href: '/radar', icon: FiBarChart },
 ]
 
 const Sidebar = () => {

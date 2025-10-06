@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { 
-  FiUpload, 
-  FiEdit, 
-  FiBarChart3, 
+import {
+  FiUpload,
+  FiEdit,
+  FiBarChart,
   FiShare2,
   FiUser,
   FiCheckCircle
@@ -39,7 +39,7 @@ const DashboardPage = () => {
       id: 3,
       title: 'Generate Chart',
       description: 'Create your radar chart profile',
-      icon: FiBarChart3,
+      icon: FiBarChart,
       href: '/radar',
       completed: !!radarData,
       current: !!finalProfile && !radarData
@@ -77,46 +77,42 @@ const DashboardPage = () => {
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`flex items-center p-4 rounded-lg border transition-colors ${
-                  step.completed
-                    ? 'bg-green-50 border-green-200'
-                    : step.current
+                className={`flex items-center p-4 rounded-lg border transition-colors ${step.completed
+                  ? 'bg-green-50 border-green-200'
+                  : step.current
                     ? 'bg-blue-50 border-blue-200'
                     : 'bg-gray-50 border-gray-200'
-                }`}
+                  }`}
               >
                 <div className="flex-shrink-0">
                   {step.completed ? (
                     <FiCheckCircle className="h-6 w-6 text-green-600" />
                   ) : (
                     <step.icon
-                      className={`h-6 w-6 ${
-                        step.current ? 'text-blue-600' : 'text-gray-400'
-                      }`}
+                      className={`h-6 w-6 ${step.current ? 'text-blue-600' : 'text-gray-400'
+                        }`}
                     />
                   )}
                 </div>
 
                 <div className="ml-4 flex-grow">
                   <h3
-                    className={`text-sm font-medium ${
-                      step.completed
-                        ? 'text-green-900'
-                        : step.current
+                    className={`text-sm font-medium ${step.completed
+                      ? 'text-green-900'
+                      : step.current
                         ? 'text-blue-900'
                         : 'text-gray-900'
-                    }`}
+                      }`}
                   >
                     {step.title}
                   </h3>
                   <p
-                    className={`text-sm ${
-                      step.completed
-                        ? 'text-green-700'
-                        : step.current
+                    className={`text-sm ${step.completed
+                      ? 'text-green-700'
+                      : step.current
                         ? 'text-blue-700'
                         : 'text-gray-500'
-                    }`}
+                      }`}
                   >
                     {step.description}
                   </p>
@@ -126,11 +122,10 @@ const DashboardPage = () => {
                   {(step.current || step.completed) && (
                     <Link
                       to={step.href}
-                      className={`btn text-sm ${
-                        step.completed
-                          ? 'btn-secondary'
-                          : 'btn-primary'
-                      }`}
+                      className={`btn text-sm ${step.completed
+                        ? 'btn-secondary'
+                        : 'btn-primary'
+                        }`}
                     >
                       {step.completed ? 'View' : 'Continue'}
                     </Link>
@@ -163,7 +158,7 @@ const DashboardPage = () => {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <FiBarChart3 className="h-8 w-8 text-green-600" />
+              <FiBarChart className="h-8 w-8 text-green-600" />
             </div>
             <div className="ml-4">
               <div className="text-sm font-medium text-gray-500">
@@ -220,7 +215,7 @@ const DashboardPage = () => {
               to="/radar"
               className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              <FiBarChart3 className="h-5 w-5 text-green-600 mr-3" />
+              <FiBarChart className="h-5 w-5 text-green-600 mr-3" />
               <div>
                 <div className="text-sm font-medium text-gray-900">
                   View Radar Chart

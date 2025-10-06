@@ -1,14 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 @layer base {
   html {
     scroll-behavior: smooth;
-  }
-
-  body {
-    @apply font-sans antialiased;
   }
 }
 
@@ -55,7 +50,9 @@
 }
 
 @keyframes loading {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     transform: scale(0);
   }
   40% {
